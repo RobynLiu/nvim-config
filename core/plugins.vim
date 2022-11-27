@@ -159,7 +159,7 @@ if g:is_win || g:is_mac
   let g:yoinkMoveCursorToEndOfPaste = 0
 
   " Record yanks in system clipboard
-  let g:yoinkSyncSystemClipboardOnFocus = 1
+  "  let g:yoinkSyncSystemClipboardOnFocus = 1
 endif
 
 """"""""""""""""""""""""""""better-escape.vim settings"""""""""""""""""""""""""

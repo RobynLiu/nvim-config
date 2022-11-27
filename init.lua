@@ -8,6 +8,7 @@
 -- Email: jdhao@hotmail.com
 -- Blog: https://jdhao.github.io/
 
+vim.g.python3_host_prog = 'C:\\Users\\Robyn\\AppData\\Local\\Programs\\Python\\Python311\\python'
 local api = vim.api
 local utils = require("utils")
 

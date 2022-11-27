@@ -16,11 +16,13 @@ set timeoutlen=500
 
 set updatetime=500  " For CursorHold events
 
-" Clipboard settings, always use clipboard for all delete, yank, change, put
+" Clipboard settings, 
+" always use clipboard for all delete, yank, change, put
 " operation, see https://stackoverflow.com/q/30691466/6064933
-if !empty(provider#clipboard#Executable())
-  set clipboard+=unnamedplus
-endif
+"  if !empty(provider#clipboard#Executable())
+"    set clipboard+=unnamedplus
+"  endif
+vmap <C-c> "+y
 
 " Disable creating swapfiles, see https://stackoverflow.com/q/821902/6064933
 set noswapfile
@@ -73,9 +75,9 @@ set wildmode=list:longest
 set scrolloff=3
 
 " Use mouse to select and resize windows, etc.
-set mouse=nic  " Enable mouse in several mode
-set mousemodel=popup  " Set the behaviour of mouse
-set mousescroll=ver:1,hor:6
+"  set mouse=nic  " Enable mouse in several mode
+"  set mousemodel=popup  " Set the behaviour of mouse
+set mousescroll=ver:5,hor:6
 
 " Disable showing current mode on command line since statusline plugins can show it.
 set noshowmode
