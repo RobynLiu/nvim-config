@@ -48,7 +48,7 @@ packer.startup {
 
     use { "wbthomason/packer.nvim", opt = true }
 
-    use { "onsails/lspkind-nvim", event = "VimEnter" }
+    -- use { "onsails/lspkind-nvim", event = "VimEnter" }
     -- -- auto-completion engine
     -- use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]] }
 
@@ -108,34 +108,35 @@ packer.startup {
     }
 
     -- File search, tag search and more
-    if vim.g.is_win then
-      use { "Yggdroot/LeaderF", cmd = "Leaderf" }
-    else
-      use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
-    end
+    -- if vim.g.is_win then
+    --   use { "Yggdroot/LeaderF", cmd = "Leaderf" }
+    -- else
+    --   use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
+    -- end
 
-    use {
-      "nvim-telescope/telescope.nvim",
-      cmd = "Telescope",
-      requires = { { "nvim-lua/plenary.nvim" } },
-    }
+    -- a highly extendable fuzzy finder over lists
+    -- use {
+    --   "nvim-telescope/telescope.nvim",
+    --   cmd = "Telescope",
+    --   requires = { { "nvim-lua/plenary.nvim" } },
+    -- }
     -- search emoji and other symbols
     -- use { "nvim-telescope/telescope-symbols.nvim", after = "telescope.nvim" }
 
     -- A list of colorscheme plugin you may want to try. Find what suits you.
-    use { "navarasu/onedark.nvim", opt = true }
-    use { "sainnhe/edge", opt = true }
-    use { "sainnhe/sonokai", opt = true }
-    use { "sainnhe/gruvbox-material", opt = true }
-    use { "shaunsingh/nord.nvim", opt = true }
-    use { "sainnhe/everforest", opt = true }
-    use { "EdenEast/nightfox.nvim", opt = true }
-    use { "rebelot/kanagawa.nvim", opt = true }
-    use { "catppuccin/nvim", as = "catppuccin", opt = true }
-    use({ "rose-pine/neovim", as = 'rose-pine', opt = true })
+    -- use { "navarasu/onedark.nvim", opt = true }
+    -- use { "sainnhe/edge", opt = true }
+    -- use { "sainnhe/sonokai", opt = true }
+    -- use { "sainnhe/gruvbox-material", opt = true }
+    -- use { "shaunsingh/nord.nvim", opt = true }
+    -- use { "sainnhe/everforest", opt = true }
+    -- use { "EdenEast/nightfox.nvim", opt = true }
+    -- use { "rebelot/kanagawa.nvim", opt = true }
+    -- use { "catppuccin/nvim", as = "catppuccin", opt = true }
+    -- use({ "rose-pine/neovim", as = 'rose-pine', opt = true })
     use { "olimorris/onedarkpro.nvim", opt = true }
-    use { "tanvirtin/monokai.nvim", opt = true }
-    use { "marko-cerovac/material.nvim", opt = true }
+    -- use { "tanvirtin/monokai.nvim", opt = true }
+    -- use { "marko-cerovac/material.nvim", opt = true }
 
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
 
@@ -147,16 +148,17 @@ packer.startup {
     }
 
     -- tab manager
-    use { "akinsho/bufferline.nvim", event = "VimEnter",
-      cond = firenvim_not_active,
-      config = [[require('config.bufferline')]] }
+    -- use { "akinsho/bufferline.nvim", event = "VimEnter",
+    --   cond = firenvim_not_active,
+    --   config = [[require('config.bufferline')]] }
 
-    -- fancy start screen
-    use { "glepnir/dashboard-nvim", event = "VimEnter",
-      cond = firenvim_not_active,
-      config = [[require('config.dashboard-nvim')]]
-    }
+    -- -- fancy start screen
+    -- use { "glepnir/dashboard-nvim", event = "VimEnter",
+    --   cond = firenvim_not_active,
+    --   config = [[require('config.dashboard-nvim')]]
+    -- }
 
+    -- This plugin adds indentation guides to all lines
     use {
       "lukas-reineke/indent-blankline.nvim",
       event = "VimEnter",
@@ -164,7 +166,7 @@ packer.startup {
     }
 
     -- Highlight URLs inside vim
-    use { "itchyny/vim-highlighturl", event = "VimEnter" }
+    -- use { "itchyny/vim-highlighturl", event = "VimEnter" }
 
     -- notification plugin
     -- use {
@@ -179,43 +181,43 @@ packer.startup {
 
     -- For Windows and Mac, we can open an URL in the browser. For Linux, it may
     -- not be possible since we maybe in a server which disables GUI.
-    if vim.g.is_win or vim.g.is_mac then
-      -- open URL in browser
-      use { "tyru/open-browser.vim", event = "VimEnter" }
-    end
+    -- if vim.g.is_win or vim.g.is_mac then
+    --   -- open URL in browser
+    --   use { "tyru/open-browser.vim", event = "VimEnter" }
+    -- end
 
     -- Only install these plugins if ctags are installed on the system
-    if utils.executable("ctags") then
-      -- show file tags in vim window
-      use { "liuchengxu/vista.vim", cmd = "Vista" }
-    end
+    -- if utils.executable("ctags") then
+    --   -- show file tags in vim window
+    --   use { "liuchengxu/vista.vim", cmd = "Vista" }
+    -- end
 
     -- Snippet engine and snippet template
-    use { "SirVer/ultisnips", event = "InsertEnter" }
-    use { "honza/vim-snippets", after = "ultisnips" }
+    -- use { "SirVer/ultisnips", event = "InsertEnter" }
+    -- use { "honza/vim-snippets", after = "ultisnips" }
 
     -- Automatic insertion and deletion of a pair of characters
     -- TODO: future investigate
     use { "Raimondi/delimitMate", event = "InsertEnter" }
 
     -- Comment plugin
-    use { "tpope/vim-commentary", event = "VimEnter" }
+    -- use { "tpope/vim-commentary", event = "VimEnter" }
 
     -- Multiple cursor plugin like Sublime Text?
     -- use 'mg979/vim-visual-multi'
 
     -- Autosave files on certain events
-    use { "907th/vim-auto-save", event = "InsertEnter" }
+    -- use { "907th/vim-auto-save", event = "InsertEnter" }
 
     -- Show undo history visually
     -- TODO: future investigate
-    use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
+    -- use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
 
     -- Manage your yank history
     -- TODO: future investigate
-    if vim.g.is_win or vim.g.is_mac then
-      use { "svermeulen/vim-yoink", event = "VimEnter" }
-    end
+    -- if vim.g.is_win or vim.g.is_mac then
+    --   use { "svermeulen/vim-yoink", event = "VimEnter" }
+    -- end
 
     -- Handy unix command inside Vim (Rename, Move etc.)
     -- use { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
@@ -224,7 +226,7 @@ packer.startup {
     -- TODO: future investigate
     use { "tpope/vim-repeat", event = "VimEnter" }
 
-    use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
+    -- use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
 
     -- Switch input methods
     -- TODO: future investigate
@@ -265,23 +267,23 @@ packer.startup {
     -- ================ markdown begin =====================
     -- Another markdown plugin
     -- TODO: future investigate
-    use { "preservim/vim-markdown", ft = { "markdown" } }
+    -- use { "preservim/vim-markdown", ft = { "markdown" } }
 
     -- Faster footnote generation
     -- TODO: future investigate
-    use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
+    -- use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
 
     -- Vim tabular plugin for manipulate tabular, required by markdown plugins
-    use { "godlygeek/tabular", cmd = { "Tabularize" } }
+    -- use { "godlygeek/tabular", cmd = { "Tabularize" } }
 
     -- Markdown previewing (only for Mac and Windows)
-    if vim.g.is_win or vim.g.is_mac then
-      use {
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        ft = { "markdown" },
-      }
-    end
+    -- if vim.g.is_win or vim.g.is_mac then
+    --   use {
+    --     "iamcco/markdown-preview.nvim",
+    --     run = "cd app && npm install",
+    --     ft = { "markdown" },
+    --   }
+    -- end
     -- ================ markdown end =====================
 
     -- use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.zen-mode')]] }
@@ -295,27 +297,27 @@ packer.startup {
     -- Additional powerful text object for vim, this plugin should be studied
     -- carefully to use its full power
     -- TODO: future investigate
-    use { "wellle/targets.vim", event = "VimEnter" }
+    -- use { "wellle/targets.vim", event = "VimEnter" }
 
     -- Plugin to manipulate character pairs quickly
     -- TODO: future investigate
-    use { "machakann/vim-sandwich", event = "VimEnter" }
+    -- use { "machakann/vim-sandwich", event = "VimEnter" }
 
     -- Add indent object for vim (useful for languages like Python)
     -- TODO: future investigate
     -- use { "michaeljsmith/vim-indent-object", event = "VimEnter" }
 
     -- Only use these plugin on Windows and Mac and when LaTeX is installed
-    if utils.executable("latex") then
-      use { "lervag/vimtex", ft = { "tex" } }
-    end
+    -- if utils.executable("latex") then
+    --   use { "lervag/vimtex", ft = { "tex" } }
+    -- end
 
     -- Since tmux is only available on Linux and Mac, we only enable these plugins
     -- for Linux and Mac
-    if utils.executable("tmux") then
-      -- .tmux.conf syntax highlighting and setting check
-      use { "tmux-plugins/vim-tmux", ft = { "tmux" } }
-    end
+    -- if utils.executable("tmux") then
+    --   -- .tmux.conf syntax highlighting and setting check
+    --   use { "tmux-plugins/vim-tmux", ft = { "tmux" } }
+    -- end
 
     -- Modern matchit implementation
     -- TODO: future investigate
@@ -350,13 +352,13 @@ packer.startup {
 
     -- Session management plugin
     -- TODO: future investigate
-    use { "tpope/vim-obsession", cmd = "Obsession" }
+    -- use { "tpope/vim-obsession", cmd = "Obsession" }
 
-    if vim.g.is_linux then
-      use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
-    end
+    -- if vim.g.is_linux then
+    --   use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
+    -- end
 
-    -- The missing auto-completion for cmdline!
+    -- auto-completion for cmdline!
     use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
 
     -- showing keybindings
@@ -372,18 +374,18 @@ packer.startup {
     }
 
     -- show and trim trailing whitespaces
-    use { "jdhao/whitespace.nvim", event = "VimEnter" }
+    -- use { "jdhao/whitespace.nvim", event = "VimEnter" }
 
     -- file explorer
     -- TODO: future investigate
-    use {
-      "kyazdani42/nvim-tree.lua",
-      requires = { "kyazdani42/nvim-web-devicons" },
-      config = [[require('config.nvim-tree')]],
-    }
+    -- use {
+    --   "kyazdani42/nvim-tree.lua",
+    --   requires = { "kyazdani42/nvim-web-devicons" },
+    --   config = [[require('config.nvim-tree')]],
+    -- }
 
-    -- Neovim completion library for sumneko/lua-language-server
-    use { "ii14/emmylua-nvim", ft = "lua" }
+    -- -- Neovim completion library for sumneko/lua-language-server
+    -- use { "ii14/emmylua-nvim", ft = "lua" }
 
     -- use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.fidget-nvim')]] }
   end,
